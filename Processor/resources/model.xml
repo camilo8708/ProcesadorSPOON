@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<featureModel xsi:schemaLocation="./resources/featureide.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <struct>
+        <and name="Biblioteca">
+            <and mandatory="true" name="Libro">
+                <feature mandatory="false" name="validacionDescriptor"/>
+                <feature mandatory="false" name="compararLibros"/>
+                <feature mandatory="false" name="darCopiasDisponibles"/>
+                <feature mandatory="false" name="darCopiasPrestamo"/>
+                <feature mandatory="false" name="darAutores"/>
+                <feature mandatory="false" name="darDescriptores"/>
+                <feature mandatory="false" name="darReferencia"/>
+                <feature mandatory="false" name="darTitulo"/>
+                <feature mandatory="false" name="darListaAutores"/>
+                <feature mandatory="false" name="darListaDescriptores"/>
+                <feature mandatory="false" name="aumentarCopiasDisponibles"/>
+                <feature mandatory="false" name="aumentarCopiasEnPrestamo"/>
+                <feature mandatory="false" name="reducirCopiasDisponibles"/>
+                <feature mandatory="false" name="reducirCopiasEnPrestamo"/>
+            </and>
+            <and mandatory="false" name="NodoIndice">
+                <feature mandatory="false" name="compararNodo"/>
+                <feature mandatory="false" name="darLlave"/>
+                <feature mandatory="false" name="darLibros"/>
+                <feature mandatory="false" name="indexarLibro"/>
+            </and>
+            <and mandatory="true" name="Usuario">
+                <feature mandatory="false" name="darClave"/>
+                <feature mandatory="false" name="darLogin"/>
+                <feature mandatory="false" name="darNombre"/>
+                <feature mandatory="false" name="darLibrosAlquilados"/>
+                <feature mandatory="false" name="alquilarLibro"/>
+                <feature mandatory="false" name="asignarLibrosAlquilados"/>
+                <feature mandatory="false" name="devolverLibro"/>
+            </and>
+        </and>
+    </struct>
+    <constraints>
+        <rule>
+            <imp>
+                <var>darLibrosAlquilados</var>
+                <var>Libro</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>alquilarLibro</var>
+                <var>Libro</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>asignarLibrosAlquilados</var>
+                <var>Libro</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>devolverLibro</var>
+                <var>Libro</var>
+            </imp>
+        </rule>
+    </constraints>
+</featureModel>
